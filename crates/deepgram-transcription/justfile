@@ -1,0 +1,23 @@
+test:
+    mkdir -p .tmp
+    TMPDIR="$PWD/.tmp" cargo test --package deepgram-transcription --locked --all-targets
+    TMPDIR="$PWD/.tmp" cargo test --package deepgram-transcription --locked --doc
+
+lint:
+    cargo fmt --package deepgram-transcription -- --check
+    cargo clippy --package deepgram-transcription --locked --all-targets -- -D warnings
+
+coverage:
+    mkdir -p .tmp
+    TMPDIR="$PWD/.tmp" cargo llvm-cov --package deepgram-transcription --exclude-from-report deepgram-transcribe-cli --locked --all-targets --fail-under-lines 90 --json --output-path .tmp/coverage-final.json
+
+check: lint test coverage
+
+build:
+    cargo build --package deepgram-transcription --locked --release
+
+fmt:
+    cargo fmt --package deepgram-transcription -- --check
+
+fmt-check:
+    cargo fmt --package deepgram-transcription -- --check

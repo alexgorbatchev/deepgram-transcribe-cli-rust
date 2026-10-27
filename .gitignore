@@ -1,0 +1,6 @@
+/target
+/bin/
+/.tmp/
+/.cache/
+/.codegraph/
+/.pi-subagents/
