@@ -12,8 +12,8 @@ name = "deepgram-transcribe"
 path = "src/main.rs"
 
 [dependencies]
-cli-command-kit = { path = "../cli-command-kit" }
-cli-deps = { path = "../deps" }
+cli-command-kit = { git = "https://github.com/alexgorbatchev/cli-command-kit-rust.git", rev = "40210e689762f6606776764bb3696e2685198c2e" }
+cli-deps = { git = "https://github.com/alexgorbatchev/deps-rust.git", rev = "6aef62e44a87f65d31283a77b93925f456362069" }
 deepgram-transcription = { path = "crates/deepgram-transcription" }
 clap_complete = "4.6"
 chrono = "0.4"

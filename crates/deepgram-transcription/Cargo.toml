@@ -9,7 +9,7 @@ publish = false
 
 [dependencies]
 chrono = { version = "0.4", features = ["serde"] }
-cli-deps = { path = "../../../deps" }
+cli-deps = { git = "https://github.com/alexgorbatchev/deps-rust.git", rev = "6aef62e44a87f65d31283a77b93925f456362069" }
 dirs = "6"
 reqwest = { version = "0.13", default-features = false, features = ["json", "query", "rustls"] }
 serde = { version = "1", features = ["derive"] }

@@ -6,7 +6,7 @@ status: current
 
 # Deepgram transcription CLI
 
-This repository provides `deepgram-transcribe` and its internal `crates/deepgram-transcription` package in one Cargo workspace; `cli-deps` remains a sibling dependency. Consult parent instructions and the applicable CLI, documentation and language skills before implementation.
+This repository provides `deepgram-transcribe` and its internal `crates/deepgram-transcription` package in one Cargo workspace; `cli-deps` resolves from a pinned GitHub revision. Consult parent instructions and the applicable CLI, documentation and language skills before implementation.
 
 ## Commands
 
