@@ -8,7 +8,13 @@ pub const SKILL: &str = include_str!("../skills/deepgram-transcribe/SKILL.md");
 pub fn help_options() -> HelpOptions {
     let width = cli_command_kit::terminal_width();
     HelpOptions {
-        skill: Some(SKILL.into()),
+        skill: Some(
+            cli_command_kit::SkillSource::new(
+                "alexgorbatchev/deepgram-transcribe-cli-rust",
+                "main",
+            )
+            .expect("the fixed skill source names a GitHub repository"),
+        ),
         tree: TreeOptions {
             terminal_width: Some(if width == 0 { 100 } else { width }),
             ..Default::default()
